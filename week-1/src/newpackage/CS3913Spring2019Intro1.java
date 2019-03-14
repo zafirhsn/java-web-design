@@ -55,8 +55,13 @@ public class CS3913Spring2019Intro1 {
         System.out.println(s);
         System.out.println();
         
-        int w = (int)(6/2.);
+//        Java will truncate 2.8 to 2
+        int w = (int)(6/2.1);
+        
         double d = 5/2.;
+        System.out.println();
+        System.out.println(w);
+        System.out.println(d);
         x=0;
         if (x!=0){
             

@@ -50,7 +50,43 @@ public class Primitives {
       System.out.println(((Object) newd).getClass().getSimpleName());
       System.out.println(newd);
       System.out.println("X = "+5+3);
+      System.out.println();
       
+      String s1 = new String("Daniel");
+      String s3 = new String("Katz");
+      String[] s2 = {"Daniel", "Zafir", "Razin"};
       
+      System.out.println(s1.getClass().getSimpleName());
+      System.out.println(s2.getClass().getSimpleName());
+      
+      swap(s1, s3);
+      System.out.println("S1: "+s1+"\nS2: "+s3);
+      
+      System.out.println((Object)s2[0].getClass().getSimpleName());
+      s3 = s1;
+      
+      s1 = "Hello";
+      System.out.println(s3);
+      
+      System.out.println();
+      arr = new int[10];
+      int[] otherArr = arr;
+      
+      for (int i = 0; i < otherArr.length; i++){
+        System.out.print(otherArr[i]);
+      }
+      arr[6] = 23;
+      System.out.println();
+      for (int i = 0; i < otherArr.length; i++){
+        System.out.print(otherArr[i]);
+      }
+      
+//      System.out.println(isEqual);
+  }
+  
+  public static void swap(String s1, String s2) {
+    String temp = s1;
+    s1 = s2;
+    s2 = temp;
   }
 }

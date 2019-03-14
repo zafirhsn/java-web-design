@@ -1,7 +1,6 @@
 package newpackage;
 
 
-
 import newpackage.NewClass;
 
 /**

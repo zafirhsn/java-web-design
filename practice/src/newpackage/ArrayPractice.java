@@ -21,8 +21,24 @@ public class ArrayPractice {
 //    System.out.println(newArr);
     
     int[] newArr = new int[10];
+    int[] temp = new int[newArr.length * 2];
+    
     for (int i = 0; i < newArr.length; i++) {
       System.out.println(newArr[i]);
+    }
+    
+    newArr = temp;
+    System.out.println(newArr);
+    System.out.println(temp);
+    
+    for (int i = 0; i < newArr.length; i++) {
+      System.out.print(newArr[i] + " ");
+    }
+    
+    temp[0] = 4;
+    System.out.println();
+    for (int i = 0; i < newArr.length; i++) {
+      System.out.print(newArr[i] + " ");
     }
      
   }
