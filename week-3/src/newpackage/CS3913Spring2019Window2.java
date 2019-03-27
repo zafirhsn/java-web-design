@@ -28,18 +28,23 @@ public class CS3913Spring2019Window2 {
         JFrame jf = new JFrame("Welcome to my program");
         jf.setSize(800,800);
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       
         JPanel inner = new JPanel();
         JPanel top = new JPanel();
         JPanel bottom = new JPanel();
+        
         inner.setLayout(new BorderLayout());
         top.setLayout(new GridLayout(6,3));
         bottom.setLayout(new GridLayout(3,5));
+        
         inner.add(top,BorderLayout.NORTH);
         inner.add(bottom,BorderLayout.SOUTH);
+        
         upButton = new JButton("UP");
         upButton.addActionListener(new ButtonListener());
         downButton = new JButton("DOWN");
         downButton.addActionListener(new ButtonListener());
+        
         iLabel = new JLabel("<HTML><BODY><H1>i=0");
         upLabel = new JLabel("Up=0");
         downLabel = new JLabel("down=0");

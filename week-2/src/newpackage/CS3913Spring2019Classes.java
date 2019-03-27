@@ -1,8 +1,5 @@
 package newpackage;
 
-
-import newpackage.NewClass;
-
 /**
  *
  * @author dkatz
