@@ -26,7 +26,7 @@ import java.util.TimerTask;
  *
  * @author zafir
  */
-public class CS3913Spring2019Graphics {
+public class Clock {
 
     /**
      * @param args the command line arguments
@@ -51,8 +51,8 @@ public class CS3913Spring2019Graphics {
 //    Convert timestamp to formatted date string
     public static String timeConvert(long timestamp) {
       Date date = new Date(timestamp / 1000L);
-      SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");
-      sdf.setTimeZone(java.util.TimeZone.getTimeZone("GMT-4"));
+      SimpleDateFormat sdf = new java.text.SimpleDateFormat("HH:mm:ss z");
+      sdf.setTimeZone(java.util.TimeZone.getTimeZone("GMT-5"));
       String formattedDate = sdf.format(date);
       System.out.println(formattedDate);
 
@@ -106,18 +106,12 @@ public class CS3913Spring2019Graphics {
 //        Special JPanel
         CirclePanel cp = new CirclePanel();
         jf.add(cp);
-        /*cp.addMouseListener(new MouseAdapter(){
-            public void mouseClicked(MouseEvent m){
-                i++;
-                cp.repaint();
-            }
-        });*/
        
           
         new Thread(){
             public void run(){
                 while (true){
-                    CS3913Spring2019Graphics.i+=6;
+                    Clock.i+=6;
                     timestamp += 1000000;
                     formatDate = timeConvert(timestamp);
                     i = getSec(timestamp) * 6;
@@ -141,18 +135,18 @@ public class CS3913Spring2019Graphics {
     }
     
 }
+
 class CirclePanel extends JPanel{
     
     int r;
     
     CirclePanel(){
         super();
-//        CS3913Spring2019Graphics.i=0;
     }
     Point calcLocation(){
         Point p = new Point();
-        p.x = (int)(Math.sin(Math.toRadians(CS3913Spring2019Graphics.i))*r);
-        p.y = (int)(Math.cos(Math.toRadians(CS3913Spring2019Graphics.i))*r);
+        p.x = (int)(Math.sin(Math.toRadians(Clock.i))*r);
+        p.y = (int)(Math.cos(Math.toRadians(Clock.i))*r);
         return p;
     }
     protected void paintComponent(Graphics g){
@@ -171,7 +165,7 @@ class CirclePanel extends JPanel{
         Point p = calcLocation();
         g.setColor(Color.BLACK);
         g.drawLine(centerX, centerY, centerX+p.x, centerY-p.y);
-        g.drawString(CS3913Spring2019Graphics.formatDate,centerX-55,centerY+100);
+        g.drawString(Clock.formatDate,centerX-60,centerY+100);
         
     }
 }
@@ -189,7 +183,7 @@ class DrawingPanel extends JPanel{
         g.setColor(Color.RED);
 
         int size=6;
-        for (Point p: CS3913Spring2019Graphics.al)
+        for (Point p: Clock.al)
             g.fillOval(p.x-size/2,p.y-size/2,size,size);
     }
 }
