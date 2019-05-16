@@ -39,6 +39,7 @@ public class CS3913Spring2019Graphics {
     
 //    Get the second value from the the timestamp in order to draw the line at the right angle when beginning
     public static int getSec(long timestamp) {
+      
       Date date = new Date(timestamp / 1000L);
       SimpleDateFormat sdf = new java.text.SimpleDateFormat("ss");
   
@@ -184,7 +185,7 @@ class DrawingPanel extends JPanel{
         int height = this.getSize().height;
         int width = this.getSize().width;
 
-        g.setColor(Color.WHITE);
+        g.setColor(Color.BLUE);
         g.fillRect(0, 0, width, height);
         g.setColor(Color.RED);
 

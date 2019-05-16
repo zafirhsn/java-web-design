@@ -20,13 +20,19 @@ public class CS3913Spring2019JDBC {
         Connection conn = null;
         try{
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            String url = "jdbc:mysql://127.0.0.1/cs3913";
-            String dbuser = "cs3913";
-            String password = "abc123";
+            
+            String url = "jdbc:mysql://127.0.0.1:3306/test";
+            String dbuser = "root";
+            String password = "";
+            
             conn = DriverManager.getConnection(url,dbuser,password);
+            
             Statement s = conn.createStatement();
+            
             s.executeQuery("select id thingie,name,bday from test;");
+            
             ResultSet rs = s.getResultSet();
+            
             while (rs.next()){
                 int id = rs.getInt(1);
                 String name = rs.getString("name");
@@ -38,7 +44,7 @@ public class CS3913Spring2019JDBC {
             conn.close();
         }
         catch(Exception e){
-            System.out.println("Error: comething happened: "+e.toString());
+            System.out.println("Error: something happened: "+e.toString());
         }
     }
     

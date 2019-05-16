@@ -44,8 +44,10 @@ class ProcessConnection extends Thread{
     public void run(){
         try{
             System.out.println("Connection number "+(++id)+"From: "+client.getInetAddress().toString());
+            
                 Scanner sin = new Scanner(client.getInputStream());
                 PrintStream sout = new PrintStream(client.getOutputStream());
+                
                 sout.print("Welcome to my Echo server!\r\n");
                 String line ="";
                 while (!line.equalsIgnoreCase("EXIT")){

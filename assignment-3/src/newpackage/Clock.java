@@ -31,7 +31,6 @@ public class Clock {
     /**
      * @param args the command line arguments
      */
-
     static long timestamp;
     static String formatDate;
     static int i;
